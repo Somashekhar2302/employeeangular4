@@ -1,0 +1,61 @@
+<h4>
+  Regular Table</h4>
+<div class="listContainer">
+  <table>
+    <tr>
+      <th *ngFor="let col of columns">{{col.header}}</th>
+    </tr>
+    <tr *ngFor="let employee of employeeList">
+      <td *ngFor="let col of columns">
+        {{employee[col.field]}}
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<h4>Primeng Dynamic Table</h4>
+<div class="listContainer">
+  <p-table [columns]="columns" [value]="employeeList" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<h4>Primeng Normal Table</h4>
+<div class="listContainer">
+  <p-table [value]="employeeList">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>User Name</th>
+        <th>User SSO</th>
+        <th>Emp ID</th>
+        <th>Location</th>
+        <th>Background</th>
+        <th>Join Date</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+      <tr>
+        <td>{{employee.username}}</td>
+        <td>{{employee.usersso}}</td>
+        <td>{{employee.employeeid}}</td>
+        <td>{{employee.location}}</td>
+        <td>{{employee.backgroundflag}}</td>
+        <td>{{employee.joindate}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <h2 class="text-muted header">Employee manager</h2>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a data-toggle="modal" data-target="#addModalLong" class="nav-link active" href="#">Add Employee</a>
+          </li>
+        </ul>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">&nbsp;</li>
+        </ul>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a data-toggle="modal" data-target="#deleteModalLong" class="nav-link active" href="#">Delete Employee</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <employee-delete></employee-delete>
+    <employee-add></employee-add>
+    <employee-list></employee-list>
+
+  </div>
+</body>
+
+</html>
